@@ -13,11 +13,11 @@ Download one of these builds:
 * [coexif_86_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_86_osx_1.1) 
 * [coexif_64_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_64_osx_1.1)
 
-## Start Server
+Start server providing a path to **Exiftool** executable.
+Like this:
 ```bash
-co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin"
+co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin" -exif-path="./exif_tool/exiftool"
 ```
-
 Now, you can query server however you like.
 
 ## GET
