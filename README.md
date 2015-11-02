@@ -6,16 +6,14 @@ Internally, **CoExif** uses a pool of long running ExifTool processes.
 #Getting Started
 
 ## Installation
-Download latest version of [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
+Download latest version of [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/).
 Download one of these builds:
-
-* [coexif_86_linux_1.1]() 
-* [coexif_64_linux_1.1]() 
-* [coexif_86_osx_1.1  ]() 
-* [coexif_64_osx_1.1  ]()
-
+* [coexif_86_linux_1](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_86_linux_1.1) 
+* [coexif_64_linux_1](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_64_linux_1.1) 
+* [coexif_86_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_86_osx_1.1) 
+* [coexif_64_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_64_osx_1.1)
 ## GET
-----------
+
 ```
 co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin"
 curl -u admin:admin 127.0.0.1:9200/2.jpg
@@ -42,7 +40,7 @@ curl -u admin:admin 127.0.0.1:9200/2.jpg
 }
 ```
 ## GET many
--------------
+
 ```
 ./co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin"
 curl -u admin:admin http://127.0.0.1:9200/
@@ -66,7 +64,7 @@ curl -u admin:admin http://127.0.0.1:9200/
 }
 ```
 ## FILTERED GET
------------
+
 ```
 co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin"
 curl -u admin:admin "127.0.0.1:9200/2.jpg?tags=CameraProfile&tags=Brightness"
