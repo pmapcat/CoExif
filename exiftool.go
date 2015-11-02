@@ -24,7 +24,6 @@ type ExifProc struct {
 
 type StandartJSON map[string]interface{}
 
-// Long live GOLANG
 type IdioticJSON struct {
 	Items []map[string]interface{}
 }
@@ -69,7 +68,7 @@ func (ex *ExifProc) GETMeta(path string, probably_filter ...string) IdioticJSON 
 		}
 		message = append(message, msg)
 	}
-	// hacks go in: Welcome
+
 	// we must hack some json surroundings to allow go parse this json
 	message = append([]string{`{"Items":`}, message...)
 	message = append(message, "}")
@@ -89,17 +88,20 @@ func (ex *ExifProc) UPDATEMeta(file_path string, datum StandartJSON) error {
 	if len(old_meta) > 0 {
 		old_corpus = old_meta[0]
 	} else {
+		ex.Busy = false
 		return errors.New("No suitable corpus for file")
 	}
 	mergo.Map(&new_corpus, old_corpus)
 	// ====== WRITE JSON ======
 	new_corpus_byte, err := json.Marshal(new_corpus)
 	if err != nil {
+		ex.Busy = false
 		return err
 	}
 	// in case there is no temp dir
 	err = os.MkdirAll(TEMP_DIR, 0777)
 	if err != nil {
+		ex.Busy = false
 		return err
 	}
 
@@ -108,6 +110,7 @@ func (ex *ExifProc) UPDATEMeta(file_path string, datum StandartJSON) error {
 
 	err = ioutil.WriteFile(json_path, new_corpus_byte, 0644)
 	if err != nil {
+		ex.Busy = false
 		return err
 	}
 	// ====== POST DATUM FOR WORKAGE =====
@@ -119,33 +122,9 @@ func (ex *ExifProc) UPDATEMeta(file_path string, datum StandartJSON) error {
 	// ====== DELETE STALE FILE ====
 	err = os.Remove(json_path)
 	if err != nil {
+		ex.Busy = false
 		return err
 	}
-
+	ex.Busy = false
 	return nil
-	// return new.Error("Exiftool is not answering")
-	// new_data_struct := mergo.MapWithOverwrite(old_datum, datum)
-
-	// ex.stdin <- fmt.Sprintf("./%s\n-JSON\n-execute\n", path)
-	// exiftool -json=picture.json picture.jpg
 }
-
-// func (ex *ExifProc) PUTMeta(path string, datum StandartJSON) IdioticJSON {
-// 	// TODO: implement (combine post&get)
-// 	return IdioticJSON{}
-// }
-
-// func main() {
-// 	// stdin_chan := make(chan string)
-// 	// stdout_chan := make(chan string)
-// 	// stderr_chan := make(chan string)
-
-// 	// go long_running_proc(stdin_chan,
-// 	// 	stdout_chan,
-// 	// 	stderr_chan,
-// 	// 	EXIF_DIR,
-// 	// 	"-stay_open", "True", "-@", "-")
-// 	// // =====
-// 	// // err_msg := <-stderr_chan
-// 	// // log.Println(err_msg)
-// }
