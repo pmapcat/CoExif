@@ -2,25 +2,18 @@
 which supports nearly any file format.
 It uses one of the best metadata management tools outhere [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
 Internally, **CoExif** uses a pool of long running ExifTool processes.
-#Feautures
----------
-
-* Supports Writing MetaData
-* Supports Reading MetaData
-* Supports Batch Reading MetaData
-* Supports any programming language(via REST API)
 
 #Getting Started
 
 ## Installation
 Download latest version of [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
-Download one of these builds
-*
-*
-*
-*
+Download one of these builds:
 
-Run server.
+* [coexif_86_linux_1.1]() 
+* [coexif_64_linux_1.1]() 
+* [coexif_86_osx_1.1  ]() 
+* [coexif_64_osx_1.1  ]()
+
 ## GET
 ----------
 ```
