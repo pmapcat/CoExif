@@ -3,3 +3,5 @@ dependencies:
     - wget http://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.04.tar.gz
     - tar -xvzf Image-ExifTool-10.04.tar.gz
     - mv Image-ExifTool-10.04 exif_tool
+
+    

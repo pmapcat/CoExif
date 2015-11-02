@@ -3,6 +3,9 @@ which supports nearly any file format.
 It uses one of the best metadata management tools outhere: [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/).
 Internally, **CoExif** uses a pool of long running ExifTool processes.
 
+[![Circle CI](https://circleci.com/gh/MichaelLeachim/CoExif/tree/master.svg?style=svg)](https://circleci.com/gh/MichaelLeachim/CoExif/tree/master)
+
+
 #Getting Started
 
 ## Installation
