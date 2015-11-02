@@ -1,6 +1,6 @@
 **CoExif** is a fast cacheable **JSON** **REST** File Metadata Server,
 which supports nearly any file format.
-It uses one of the best metadata management tools outhere [exiftool].
+It uses one of the best metadata management tools outhere [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
 Internally, **CoExif** uses a pool of long running ExifTool processes.
 #Feautures
 ---------
