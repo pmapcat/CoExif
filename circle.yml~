@@ -1,0 +1,4 @@
+dependencies:
+  post:
+    - wget http://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.04.tar.gz
+    -
