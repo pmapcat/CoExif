@@ -1,6 +1,6 @@
 **CoExif** is a fast cacheable **JSON** **REST** File Metadata Server,
 which supports nearly any file format.
-It uses one of the best metadata management tools outhere [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
+It uses one of the best metadata management tools outhere: [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/).
 Internally, **CoExif** uses a pool of long running ExifTool processes.
 
 #Getting Started
@@ -121,7 +121,7 @@ curl -u admin:admin "127.0.0.1:9999/a.png?tags=Artist&tags=Author"
   ]
 }
 ```
-# SERVER PARAMS
+## SERVER PARAMS
 ```bash
   -auth-name="admin": Enter auth name
   -auth-pass="admin": Enter auth pass
@@ -131,7 +131,14 @@ curl -u admin:admin "127.0.0.1:9999/a.png?tags=Artist&tags=Author"
   -port="9999": Enter a server port number
   -root="/": Enter default root path
 ```
-  
+<!-- ## Building from source & tests -->
+
+<!-- 1. Clone this repo -->
+<!-- 2. Launch build.sh in directory. -->
+
+
+
+
   
 <!-- # Build from source -->
 <!-- ``` -->
