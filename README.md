@@ -45,45 +45,8 @@ curl -u admin:admin 127.0.0.1:9200/2.jpg
    ]
 }
 ```
-## GET many
-
-```bash
-curl -u admin:admin http://127.0.0.1:9200/
-{
-  "Items": [
-    {
-      "BitDepth": 24,
-      "Compression": "FMP4",
-      "Directory": "/home/mik",
-      "Duration": "0:01:21",
-      "ExifToolVersion": 10.04,
-      "FileAccessDate": "2015:08:02 20:10:40+03:00",
-      "FileInodeChangeDate": "2015:08:03 13:35:03+03:00",
-      "FileModifyDate": "2015:08:03 13:35:03+03:00",
-      "FileName": "output.avi",
-      "FilePermissions": "rw-r--r--",
-      ......
-      e.t.c.
-      }
-  ]
-}
-```
-## FILTERED GET
-
-```bash
-curl -u admin:admin "127.0.0.1:9200/2.jpg?tags=CameraProfile&tags=Brightness"
-{
-  "Items": [
-    {
-      "Brightness": "+50",
-      "CameraProfile": "Adobe Standard",
-      "SourceFile": "/home/mik/2.jpg"
-    }
-  ]
-}
-```
-## Filtered many
-It is good to have been able to select  specific tags:
+## Filtered GET
+It is good to have been able to select specific tags:
 ```bash
 curl -u admin:admin "http://127.0.0.1:9999/home/mik/?tags=FileAccessDate&tags=FileName"
 {
@@ -101,7 +64,6 @@ curl -u admin:admin "http://127.0.0.1:9999/home/mik/?tags=FileAccessDate&tags=Fi
   ]
 }    
 ```
-
 ## POST metadata
 
 Post will replace metadata in a file with specified fields.
