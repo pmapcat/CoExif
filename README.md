@@ -12,10 +12,16 @@ Download one of these builds:
 * [coexif_64_linux_1](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_64_linux_1.1) 
 * [coexif_86_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_86_osx_1.1) 
 * [coexif_64_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_64_osx_1.1)
-## GET
 
-```
+## Start Server
+```bash
 co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin"
+```
+
+Now, you can query server however you like.
+
+## GET
+```bash
 curl -u admin:admin 127.0.0.1:9200/2.jpg
 {
   "Items": [
@@ -41,8 +47,7 @@ curl -u admin:admin 127.0.0.1:9200/2.jpg
 ```
 ## GET many
 
-```
-./co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin"
+```bash
 curl -u admin:admin http://127.0.0.1:9200/
 {
   "Items": [
@@ -65,8 +70,7 @@ curl -u admin:admin http://127.0.0.1:9200/
 ```
 ## FILTERED GET
 
-```
-co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin"
+```bash
 curl -u admin:admin "127.0.0.1:9200/2.jpg?tags=CameraProfile&tags=Brightness"
 {
   "Items": [
@@ -78,10 +82,9 @@ curl -u admin:admin "127.0.0.1:9200/2.jpg?tags=CameraProfile&tags=Brightness"
   ]
 }
 ```
-## FILTERED GET Many
+## Filtered many
 It is good to have been able to select  specific tags:
-```
-./co_exif -root "/" -auth-name="admin" -auth-pass="admin"
+```bash
 curl -u admin:admin "http://127.0.0.1:9999/home/mik/?tags=FileAccessDate&tags=FileName"
 {
   "Items": [
@@ -103,9 +106,8 @@ curl -u admin:admin "http://127.0.0.1:9999/home/mik/?tags=FileAccessDate&tags=Fi
 Post will replace metadata in a file with specified fields.
 Not specified fields will remain the same.
 Example:
-```
+```bash
 // POST DATA
-./co_exif -root "/home/mik" -auth-name="admin" -auth-pass="admin"
 curl -XPOST http://127.0.0.1:9999/a.png -u admin:admin -H "Content-Type: application/json" -d '{"Artist":"Mik-s picture","Author":"Blablablab"}'
 // RESULTS
 curl -u admin:admin "127.0.0.1:9999/a.png?tags=Artist&tags=Author"
@@ -120,7 +122,7 @@ curl -u admin:admin "127.0.0.1:9999/a.png?tags=Artist&tags=Author"
 }
 ```
 # SERVER PARAMS
-```
+```bash
   -auth-name="admin": Enter auth name
   -auth-pass="admin": Enter auth pass
   -auto-spawn=false: Should I autospawn processes
