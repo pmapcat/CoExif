@@ -20,7 +20,10 @@ co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin" -exi
 ```
 Now, the server can be queried.
 *This part* of url:
-```127.0.0.1:9200/<this_part><filters>```
+```bash
+127.0.0.1:9200/<this_part><filters>
+```
+
 is *FS* path without *-root* param in server settings.
 
 ## GET
