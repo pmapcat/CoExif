@@ -103,8 +103,12 @@ curl -u admin:admin "http://127.0.0.1:9999/home/mik/?tags=FileAccessDate&tags=Fi
 ```
 
 ## POST metadata
+
 Post will replace metadata in a file with specified fields.
-Not specified fields will remain the same.
+Please refer to
+[Exiftool TagNames](http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/)
+to know what type  of tags can be rewritten.
+
 Example:
 ```bash
 // POST DATA
@@ -122,6 +126,7 @@ curl -u admin:admin "127.0.0.1:9999/a.png?tags=Artist&tags=Author"
 }
 ```
 ## SERVER PARAMS
+
 ```bash
   -auth-name="admin": Enter auth name
   -auth-pass="admin": Enter auth pass
@@ -131,6 +136,8 @@ curl -u admin:admin "127.0.0.1:9999/a.png?tags=Artist&tags=Author"
   -port="9999": Enter a server port number
   -root="/": Enter default root path
 ```
+
+
 <!-- ## Building from source & tests -->
 
 <!-- 1. Clone this repo -->
