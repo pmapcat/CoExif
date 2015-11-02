@@ -6,14 +6,14 @@ Internally, **CoExif** uses a pool of long running ExifTool processes.
 #Getting Started
 
 ## Installation
-Download latest version of [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/).
-Download one of these builds:
+[Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/). must be downloaded.
+One of these builds must be downloaded also:
 * [coexif_86_linux_1](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_86_linux_1.1) 
 * [coexif_64_linux_1](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_64_linux_1.1) 
 * [coexif_86_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_86_osx_1.1) 
 * [coexif_64_osx_1  ](https://github.com/MichaelLeachim/CoExif/releases/download/v1.0/coexif_64_osx_1.1)
 
-Start server providing a path to **Exiftool** executable.
+Server must be started providing a path to **Exiftool** executable.
 Like this:
 ```bash
 co_exif -root "/home/mik/" -port 9200 -auth-name="admin" -auth-pass="admin" -exif-path="./exif_tool/exiftool"
